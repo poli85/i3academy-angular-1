@@ -1,0 +1,13 @@
+<p [ngStyle]="{color: getColor()}" [ngClass]="{younger: myAge === 20}">Mi chiamo {{getMyName()}} <span *ngIf="showMySurname; else noSurname">{{surname}}</span> e ho {{myAge}} anni</p>
+
+<ng-template #noSurname>*******</ng-template>
+
+<button [disabled]="btnDisabled" (click)="makeMeYounger()">BUTTON</button>
+
+<input type="text" [(ngModel)]="myName">
+
+<ul *ngIf="products && products.length > 0">
+  <li *ngFor="let product of products; let i = index">
+      {{i + 1}} - {{product.name}}: {{product.qty}}
+  </li>
+</ul>
